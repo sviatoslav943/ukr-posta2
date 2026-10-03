@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0 135px;
+            background-color: #F8F8F8;
+        }
+
+        .news {
+            padding: 100px 0;
+        }
+
+        .legal {
+            padding-bottom: 100px;
+        }
+
+        .news-title,
+        .legal-title {
+            font-size: 48px;
+            color: #0E2F4B;
+        }
+
+        .news-list,
+        .legal-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .news-card,
+        .legal-option {
+            max-width: 570px;
+            height: 250px;
+            background: #FFF;
+            padding: 30px;
+        }
+
+        .legal-option {
+            height: auto;
+            width: 370px;
+            font-size: 20px;
+            color: #99A2AA;
+            padding: 30px 40px;
+            font-weight: bold;
+        }
+
+        .news-card img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .news-card-date {
+            padding-bottom: 8px;
+        }
+
+        .news-card-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .news-card-container div {
+            flex-wrap: nowrap;
+            gap: 20px;
+        }
+
+        .news-card-title {
+            font-size: 20px;
+            padding-bottom: 23px;
+        }
+
+        .last-app {
+            background-color: #FEC524;
+            padding-left: 150px;
+            padding-top: 75px;
+            padding-bottom: 50px;
+        }
+
+        .last-app h2 {
+            font-weight: 700;
+            font-style: normal;
+            font-size: 48px;
+            color: white;
+        }
+
+        .go-post {
+            font-size: 16px;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .last-app h4 {
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .boss-footer {
+            display: flex;
+            justify-content: space-around;
+            background-color: #1D2023;
+            padding-bottom: 75px;
+        }
+
+        .boss-footer h3 {
+            padding-top: 50px;
+            color: white;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 16px;
+        }
+
+        .boss-footer p {
+            font-weight: 400;
+            font-size: 16px;
+            color: #99A2AA;
+        }
+
+        .Across-Ukraine-and-the-World {
+            display: flex;
+            margin-left: 150px;
+            margin-bottom: 70px;
+            margin-top: 70px;
+        }
+
+        .Postal-services h2 {
+            font-weight: 700;
+            font-size: 48px;
+        }
+
+        .Postal-services p {
+            font-weight: 400;
+            font-size: 16px;
+            color: #0E2F4B;
+        }
+
+        .Read-more-ukraine h3 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .Read-more-ukraine button {
+            border: none;
+            background-color: transparent;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .Read-more-ukraine {
+            margin-left: 60px;
+            margin-right: 100px;
+        }
+
+        .Read-more-ukraine ul {
+            margin-bottom: 100px;
+        }
+
+        .hero-julia {
+            height: 470px;
+            background: #003b78;
+            padding: 55px 0 0 105px;
+        }
+
+        .hero-julia h1 {
+            margin: 0;
+            color: white;
+            font-size: 36px;
+            line-height: 1.25;
+        }
+
+        .hero-julia p {
+            margin-top: 28px;
+            color: #b8cde3;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .hero-julia button {
+            margin-top: 28px;
+            width: 230px;
+            height: 62px;
+            border: none;
+            border-radius: 8px;
+            background: #ffd000;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .notice-julia {
+            margin-top: 70px;
+            background: #ffd000;
+            padding: 30px 55px;
+            border-radius: 8px;
+            margin-bottom: 80px;
+        }
+
+        .notice-julia h2 {
+            margin: 0 0 12px;
+            color: #333;
+            font-size: 20px;
+        }
+
+        .cards-julia a {
+            color: #123d70;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            min-height: 100vh;
+        }
+
+        .services-julia h2 {
+            margin: 0 0 45px;
+            font-size: 36px;
+        }
+
+        .cards-julia {
+            display: flex;
+            gap: 120px;
+        }
+
+        .cards-julia article {
+            width: 180px;
+        }
+
+        .cards-julia h3 {
+            margin: 0 0 12px;
+            color: #123d70;
+            font-size: 18px;
+            line-height: 1.35;
+        }
+
+        .search-julia {
+            margin-top: 50px;
+            height: 300px;
+            background: #00458a;
+            padding: 190px 115px;
+            color: white;
+        }
+
+        .search-julia h2 {
+            margin: 0 0 35px;
+            font-size: 48px;
+        }
+
+        .search-julia p {
+            width: 1250px;
+            font-size: 17px;
+            line-height: 1.6;
+            color: #b8d0e8;
+        }
+
+        .form-julia {
+            display: flex;
+            margin-top: 85px;
+        }
+
+        .form-julia input {
+            width: 280px;
+            height: 40px;
+            padding: 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+
+        .form-julia button {
+            width: 280px;
+            height: 90px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #ffd000;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo-sl {
+            width: 186px;
+            height: 50px;
+        }
+
+        .nav-sl {
+            display: flex;
+            gap: 60px;
+        }
+
+        .a-sl {
+            text-decoration: none;
+            color: black;
+        }
+
+        .prepayment-sl {
+            padding: 140px;
+            top: 140px;
+            height: 450px;
+            background: #ffc629;
+        }
+
+        .h1-sl {
+            margin: 0;
+            color: white;
+            font-size: 46px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .p-sl {
+            margin-top: 35px;
+            color: #111;
+            font-size: 16px;
+        }
+
+        .box-sl {
+            width: 1170px;
+            margin: 0 auto;
+        }
+
+        .input-sl {
+            width: 540px;
+            height: 74px;
+            box-sizing: border-box;
+
+            border: none;
+            border-radius: 10px;
+            background: #fff;
+
+            padding: 0 30px;
+            font-size: 16px;
+            color: #555;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            outline: none;
+        }
+
+        .buttons-sl {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .action-button-sl {
+            width: 270px;
+            height: 80px;
+
+            border: none;
+            border-radius: 10px;
+            background: #fff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+
+            color: #9ba3aa;
+            font-size: 16px;
+            font-weight: 700;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .icon-sl {
+            font-size: 30px;
+            font-weight: 400;
+            color: #9ba6ae;
+        }
+
+        .container-sl {
+            width: 100%;
+            max-width: 1170px;
+            margin: 0 auto;
+            padding-top: 150px;
+            padding-left: 0;
+        }
+
+        .hero-sl h1 {
+            margin: 0 0 36px;
+
+            color: #fff;
+            font-size: 48px;
+            line-height: 1.25;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .hero-sl p {
+            margin: 0 0 43px;
+
+            color: #8ca4b8;
+            font-size: 16px;
+            line-height: 2;
+        }
+
+        .button-sl {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 305px;
+            height: 80px;
+
+            background: #ffbf3f;
+            border: none;
+            border-radius: 10px;
+
+            color: #073554;
+            font-size: 20px;
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+        header {
+            padding-top: 30px;
+            padding-left: 140px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo-sl">
+            <img src="images/logo-sl.png">
+        </a>
+        <nav class="nav-sl">
+            <a class="a-sl" href="#">Трекінг</a>
+            <a class="a-sl" href="#">Послуги</a>
+            <a class="a-sl" href="#">Тарифи</a>
+            <a class="a-sl" href="#">Відділення</a>
+            <a class="a-sl" href="#">Філателія</a>
+            <a class="a-sl" href="#">Кар’єра</a>
+            <a class="a-sl" href="#">Бізнесу</a>
+        </nav>
+    </header>
+    <main>
+
+        <main>
+            <section class="prepayment-sl">
+                <h1 class="h1-sl">Оформлюйте<br>передплату!</h1>
+                <p class="p-sl">Досхочу вибирайте й призи вигравайте</p>
+                <div class="box-sl">
+
+                    <input class="input-sl" placeholder="Введіть номер відправлення">
+
+                    <div class="buttons-sl">
+
+                        <button class="action-button">
+                            <img src="images/SVG.png" class="icon-sl">
+                            <span>Розрахувати</span>
+                        </button>
+
+                        <button class="action-button">
+                            <img src="images/korobka.png" class="icon-sl">
+                            <span>Оформити</span>
+                        </button>
+
+                        <button class="action-button">
+                            <img src="images/sll.png" class="icon-sl">
+                            <span>Знайти індекс</span>
+                        </button>
+
+                        <button class="action-button">
+                            <img src="images/buch.png" class="icon-sl">
+                            <span>Передплатити</span>
+                        </button>
+
+                    </div>
+
+            </section>
+
+            <section>
+                <div class="Across-Ukraine-and-the-World">
+                    <div class="Postal-services">
+                        <h2>Поштові <br> послуги</h2>
+
+                        <p>Замовляйте доставку у найвіддаленіші куточки <br> України, відправляйте й отримуйте посилки з
+                            <br>
+                            усього світу і навпаки.
+                        </p>
+
+                        <p>Виберіть доставку, яка найкраще підійде вам <br> за термінами пересилання і вартістю.</p>
+                    </div>
+
+                    <div class="Read-more-ukraine">
+                        <ul>
+                            <h3>
+                                Доставка<br>
+                                по Україні
+                            </h3>
+                            <button>Докладніше ></button>
+                        </ul>
+
+                        <ul>
+                            <h3>
+                                Доставка з інтернет-<br>
+                                магазинів
+                            </h3>
+
+                            <button>Докладніше ></button>
+                        </ul>
+
+                        <ul>
+                            <h3>
+                                Доставка<br>
+                                по світу
+                            </h3>
+
+                            <button>Докладніше ></button>
+                        </ul>
+                    </div>
+
+                    <div class="Read-more-ukraine">
+                        <ul>
+                            <h3>
+                                Доставка<br>
+                                документів
+                            </h3>
+
+                            <button>Докладніше ></button>
+                        </ul>
+
+                        <ul>
+                            <h3>
+                                Доставка ліків
+                            </h3>
+
+                            <button>Докладніше ></button>
+                        </ul>
+
+                        <ul>
+                            <h3>
+                                Доставка в<br>
+                                Україну
+                            </h3>
+
+                            <button>Докладніше ></button>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="hero-julia">
+
+                <h1>Започаткуйте успішний<br>міжнародний бізнес!</h1>
+                <p>
+                    Продавайте товари за кордон через інтернет<br>
+                    — нам довіряють 25 тисяч підприємців
+                </p>
+                <button>Перейти</button>
+            </section>
+            <main>
+                <section class="notice-julia">
+                    <h2>Укрпошта надала благодійної та гуманітарної допомоги на понад 150 мільйонів гривень</h2>
+                    <p>
+                        у 2022 році, коли росія вдалася до повномасштабного вторгнення
+                        на територію нашої держави, Укрпошта, окрім основних
+                    </p>
+                    <a href="#">Докладніше </a>
+                </section>
+                <section class="services-julia">
+                    <h2>Фінансові послуги</h2>
+                    <div class="cards-julia">
+                        <article>
+                            <h3>Грошові<br>перекази</h3>
+                            <a href="#">Докладніше </a>
+                        </article>
+                        <article>
+                            <h3>Міжнародні<br>перекази</h3>
+                            <a href="#">Докладніше </a>
+                        </article>
+                        <article>
+                            <h3>Страхування</h3>
+                            <a href="#">Докладніше </a>
+                        </article>
+                    </div>
+                </section>
+                <section class="search-julia">
+                    <h1>Знайти індекс</h1>
+                    <p>
+                        Поштовий індекс — це код із 5 цифр, який допомагає пришвидшити сортування та доставку
+                        відправлень.
+                        Поштовий індекс мають всі відділення Укрпошти та всі населені пункти України.
+                    </p>
+                    <div class="form-julia">
+                        <input type="text" placeholder="Введіть назву населеного пункту">
+                        <button>Знайти</button>
+                    </div>
+                </section>
+
+                <section class="news">
+                    <h2 class="news-title">Новини</h2>
+                    <ul class="news-list">
+                        <li>
+                            <article class="news-card">
+                                <div class="news-card-container">
+                                    <div class="news-card-container">
+                                        <img src="images/350_icon-01.png.png">
+                                        <div>
+                                            <p class="news-card-date">06.11.2023</p>
+                                            <h3 class="news-card-title">Відновлення історичної назви міста Звягель</h3>
+                                        </div>
+                                    </div>
+                                    <p class="news-card-info">09 листопада п.р. відбудеться погашення</p>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="news-card">
+                                <div class="news-card-container">
+                                    <div class="news-card-container">
+                                        <img src="images/pin_2.png.png">
+                                        <div>
+                                            <p class="news-card-date">03.11.2023</p>
+                                            <h3 class="news-card-title">У селі Архангельське на Херсонщині відкрили
+                                                стаціонарне
+                                                відділення Укрпошти</h3>
+                                        </div>
+                                    </div>
+                                    <p class="news-card-info">Днями відновило свою роботу стаціонарне автоматизоване
+                                        відділення
+                                        Укрпошти в селищі Архангельське (74022)…</p>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="news-card">
+                                <div class="news-card-container">
+                                    <div class="news-card-container">
+                                        <img src="images/pin_2.png.png">
+                                        <div>
+                                            <p class="news-card-date">06.11.2023</p>
+                                            <h3 class="news-card-title">Укрпошта в Японії: українські марки на
+                                                філателістичній
+                                                виставці JAPEX2023</h3>
+                                        </div>
+                                    </div>
+                                    <p class="news-card-info">Сьогодні відбулося урочисте відкриття Всеяпонської
+                                        філателістичної
+                                        виставки JAPEX2023 під загальною назвою…</p>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="news-card">
+                                <div class="news-card-container">
+                                    <div class="news-card-container">
+                                        <img src="images/pin_2.png.png">
+                                        <div>
+                                            <p class="news-card-date">06.11.2023</p>
+                                            <h3 class="news-card-title">Півтора року співпраці Укрпошти та Укрзалізниці:
+                                                перевезено
+                                                ≈15 млн відправлень та виплачено ≈170 млн грн…</h3>
+                                        </div>
+                                    </div>
+                                    <p class="news-card-info">В Укрпошти й Укрзалізниці спільною є не лише основа «укр»,
+                                        а й
+                                        проєкти, що реалізуються для підтримки українців та України. …</p>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="legal">
+                    <h2 class="legal-title">Для юридичних осіб</h2>
+                    <ul class="legal-list">
+                        <li class="legal-item">
+                            <p class="legal-option">Відправлення по Україні</p>
+                        </li>
+                        <li class="legal-item">
+                            <p class="legal-option">Експорт</p>
+                        </li>
+                        <li class="legal-item">
+                            <p class="legal-option">Програмне забезпечення</p>
+                        </li>
+                        <li class="legal-item">
+                            <p class="legal-option">Укласти договір</p>
+                        </li>
+                        <li class="legal-item">
+                            <p class="legal-option">Інтеграція API</p>
+                        </li>
+                        <li class="legal-item">
+                            <p class="legal-option">Особистий кабінет</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="last-app">
+                    <div>
+                        <h2>Онлайн-сервіси Укрпошти</h2>
+
+                        <p class="go-post">Оформлюй, відправляй та відстежуй “на ходу”</p>
+
+                        <h4>Мобільний застосунок</h4>
+
+                        <div>
+                            <img src="images/google-play.png" alt="">
+                            <img src="images/app-store.png" alt="">
+                        </div>
+
+                        <h4>Чат-бот</h4>
+
+                        <div>
+                            <img src="images/telegram.png" alt="">
+                            <img src="images/mobile.png" alt="">
+                            <img src="images/facebook.png" alt="">
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <footer>
+                <div class="boss-footer">
+                    <div>
+                        <ul>
+                            <h3>Загальна інформація</h3>
+                            <p>Про Укрпошту</p>
+                            <p>Наглядова рада</p>
+                            <p>Керівництво</p>
+                            <p>Дирекції</p>
+                            <p>Публічна інформація</p>
+                            <p>Закупівлі</p>
+                            <p>Продаж і оренда нерухомості</p>
+                            <p>Протидія корупції</p>
+                            <p>Політика безпеки дорожнього <br> руху</p>
+                            <p>Конфіденційність</p>
+                            <p>Для представників ЗМІ</p>
+                            <p>Новини</p>
+                            <p>Акції</p>
+                            <p>Контакт-центр</p>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <h3>Поштові послуги</h3>
+                            <p>Укрпошта Експрес</p>
+                            <p>Укрпошта Стандарт</p>
+                            <p>Укрпошта Документи</p>
+                            <p>Доставка по світу</p>
+                            <p>Доставка в Україну</p>
+                            <p>Великогабаритні або великовагові <br> відправлення</p>
+                            <p>Кур’єрська доставка</p>
+                            <p>Розрахунок вартості</p>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <h3>Фінансові послуги</h3>
+                            <p>Переказ «З картки додому»</p>
+                            <p>Переказ «З картки до відділення»</p>
+                            <p>Переказ «З картки на картку»</p>
+                            <p>Міжнародні поштові перекази</p>
+                            <p>Внутрішні поштові перекази</p>
+                            <p>Платежі</p>
+                            <p>Страхові послуги</p>
+                            <p>Валютно-обмінні операції</p>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <h3>Інше</h3>
+                            <p>Онлайн-сервіси</p>
+                            <p>Онлайн-передплата</p>
+                            <p>Поштовий маркет</p>
+                            <p>Продукти «Власної марки»</p>
+                            <p>Періодичні видання</p>
+                            <p>Для видавців</p>
+                            <p>Посткросинг</p>
+                            <p>Секограма</p>
+                            <p>Знайти індекс</p>
+                            <p>Знайти адресу</p>
+                            <p>Знайти відділення</p>
+                            <p>Довідка</p>
+                            <p>API від Укрпошти</p>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+</body>
+
+</html>
